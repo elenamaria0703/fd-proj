@@ -3,20 +3,29 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>&lt;my-element> Demo</title>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="../my-element.js"></script>
+    <script type="module" src="../custom-table.js"></script>
     <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
+      #table-1 {
+        --border-color: #4d0000;
+        --nth-background-color: #ffe6e6;
+        --header-background-color: #990000;
+        --hover-background-color: #ff9999;
+      }
+
+      #table-2 {
+        --nth-background-color: #c6c6ec;
+        --header-background-color: #202060;
+        --hover-background-color: #6666cc;
       }
     </style>
   </head>
   <body>
-    <my-element>
-      <p>This is child content</p>
-    </my-element>
+    <custom-table headers='["First Name", "Last Name", "Age"]' items='[["Elena", "Maria", "3"],["Tudor", "Pop","4"],["Raluca", "Popa","4"]]'></custom-table>
+    </br>
+    <custom-table id="table-1" headers='["Product", "Price"]' items='[["Butter", "22"],["Milk", "10"],["Apples", "5"], ["Water", "7"]]'></custom-table>
+    </br>
+    <custom-table id="table-2" headers='["Book", "Author", "Pages", "Category"]' items='[["In Search of Lost Time", "Marcel Proust", "300", "Story"],[" Ulysses", "James Joyce", "300", "Story"]]'></custom-table>
   </body>
 </html>
